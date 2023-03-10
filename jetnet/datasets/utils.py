@@ -176,11 +176,28 @@ def getSplitting(
 
 
 def findMaxLengthList(lst):
+    ''' 
+    Finds max length sublist in list, returns the integer value of the max sublist.
+    Args:
+        lst (List): A nested list containing sublists as its elements. 
+    
+    '''
     maxLength = max(len(x) for x in lst)
     return maxLength
 
 
 def zero_padding(lst):
+    '''
+    Takes in a list containing awkward level array elements. Converts elements into lists
+    and appends to a new list that will now contain list with nested lists in each eleement
+    of the outer list. Next, we find the max length of the sublists and use that number to convert
+    other sublists to lists of that max length sublist by adding zeros at the end of the list in order
+    to reach the length threshold. Returns a 2D NumPy array of our data after all zero padding is completed.
+
+    Args:
+        lst (List): An asymmetrical list that needs to be converted to a NumPy 2D array and needs zero padding.
+
+    '''
     returned_list = []
     for sub_list in lst:
         sub_list = list(sub_list)
